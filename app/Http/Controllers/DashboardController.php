@@ -25,6 +25,13 @@ class DashboardController extends Controller
       return view('dashboard.twitter_scrape');
     }
 
+    public function instagram_scrape(){
+      if(!session('logged_in')){
+        return redirect('/');
+      }
+      return view('dashboard.instagram_scrape');
+    }
+
     public function twitter_data(Request $request,$offset){
       if(!session('logged_in')){
         return redirect('/');
