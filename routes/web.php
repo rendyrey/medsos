@@ -32,6 +32,9 @@ Route::get('get_sentiment/{string}','TwitterController@get_sentiment')->name('ge
 //instagram
 Route::get('instagram_scrape','DashboardController@instagram_scrape')->name('instagram_scrape');
 
+//facebook
+Route::get('facebook_scrape','DashboardController@facebook_scrape')->name('facebook_scrape');
+
 //graphic
 Route::get('graphic','GraphicController@index')->name('graphic');
 Route::post('graphic_detail','GraphicController@detail')->name('graphic_detail');

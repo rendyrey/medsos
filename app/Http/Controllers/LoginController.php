@@ -24,8 +24,8 @@ class LoginController extends Controller
       $username = $request->username;
       $password = md5($request->password);
 
-      if(Login::where('username',$username)->where('password',$password)->first()){
-        session(['logged_in'=>TRUE,'username'=>$username]);
+      if($login = Login::where('username',$username)->where('password',$password)->first()){
+        session(['logged_in'=>TRUE,'username'=>$username,'tipe_user'=>$login->tipe_user]);
         return redirect('dashboard');
       }else{
         return redirect('/')->with('message','Username or Password was incorrect');

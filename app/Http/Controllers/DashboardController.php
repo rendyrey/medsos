@@ -17,7 +17,7 @@ class DashboardController extends Controller
       }
       return view('dashboard.index');
     }
-
+    
     public function twitter_scrape(){
       if(!session('logged_in')){
         return redirect('/');
@@ -26,6 +26,13 @@ class DashboardController extends Controller
     }
 
     public function instagram_scrape(){
+      if(!session('logged_in')){
+        return redirect('/');
+      }
+      return view('dashboard.instagram_scrape');
+    }
+
+    public function facebook_scrape(){
       if(!session('logged_in')){
         return redirect('/');
       }
